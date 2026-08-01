@@ -1,0 +1,40 @@
+name: Initial CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t initial-ci-cd:latest .
+
+      - name: Save Image as Tar
+        run: docker save initial-ci-cd:latest > initial-ci-cd.tar
+
+      - name: Deploy to Azure Server
+        env:
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          echo "$SSH_KEY" > key.pem
+          chmod 600 key.pem
+          
+          # Transfer the image to the server
+          scp -o StrictHostKeyChecking=no -i key.pem initial-ci-cd.tar $SSH_USER@$SERVER_IP:/tmp/
+          
+          # Run the container on the server
+          ssh -o StrictHostKeyChecking=no -i key.pem $SSH_USER@$SERVER_IP << 'EOF'
+            docker load -i /tmp/initial-ci-cd.tar
+            docker stop initial-ci-cd-container || true
+            docker rm initial-ci-cd-container || true
+            docker run -d --name initial-ci-cd-container -p 80:80 initial-ci-cd:latest
+            rm /tmp/initial-ci-cd.tar
+            echo "Deployment Successful!"
+          EOF

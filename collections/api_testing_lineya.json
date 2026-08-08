@@ -1,0 +1,1764 @@
+{
+  "info": {
+    "_postman_id": "d862144a-fa02-4b1c-9436-1ce1500f5b44",
+    "name": "my collection",
+    "description": "30 public API requests for Postman/Newman practice. Includes GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57101002",
+    "_collection_link": "https://go.postman.co/collection/57101002-d862144a-fa02-4b1c-9436-1ce1500f5b44?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Dog CEO - Random Dog",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Status is success\", () => pm.expect(data.status).to.eql(\"success\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/image/random",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "image",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dog CEO - All Breeds",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Message is an object\", () => pm.expect(data.message).to.be.an(\"object\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/list/all",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "list",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dog CEO - 3 Random Dogs",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => ",
+              "pm.response.to.have.status(200));",
+              "var data =pm.response.json(); ",
+              "pm.test(\"Returns 3 images\", function () {",
+              "    pm.expect(data.message).to.be.an(\"array\");",
+              "    pm.expect(data.message).to.have.lengthOf(3);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/image/random/3",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "image",
+            "random",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dog CEO - Hound Images",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Images are an array\", () => pm.expect(data.message).to.be.an(\"array\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breed/hound/images",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breed",
+            "hound",
+            "images"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "quotes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Quote exists\", () => {\r",
+              "    pm.expect(jsonData[0].q).to.be.a(\"string\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://zenquotes.io/api/random",
+          "protocol": "https",
+          "host": [
+            "zenquotes",
+            "io"
+          ],
+          "path": [
+            "api",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - Replacement JSON GET",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+              "var data = pm.response.json();",
+              "pm.test(\"Fact parameter is echoed\", function () { pm.expect(data.args.fact).to.eql(\"api_testing\"); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://postman-echo.com/get?fact=api_testing",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "fact",
+              "value": "api_testing"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cat Facts - Random Fact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Fact is a string\", () => pm.expect(data.fact).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/fact",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "fact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cat Facts - 3 Facts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Data is an array\", () => pm.expect(data.data).to.be.an(\"array\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/facts?limit=3",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "facts"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cat Facts - Limit 5",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Maximum 5 facts returned\", () => pm.expect(data.data.length).to.be.at.most(5));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/facts?limit=5",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "facts"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cat Facts - Max Length 100",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Fact is present\", () => pm.expect(data.fact).to.be.a(\"string\").and.not.empty);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/fact?max_length=100",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "fact"
+          ],
+          "query": [
+            {
+              "key": "max_length",
+              "value": "100"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bored - Random Activity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Activity exists\", () => pm.expect(data.activity).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bored-api.appbrewery.com/random",
+          "protocol": "https",
+          "host": [
+            "bored-api",
+            "appbrewery",
+            "com"
+          ],
+          "path": [
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bored - Education Activity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Response is an array\", () => pm.expect(data).to.be.an(\"array\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bored-api.appbrewery.com/filter?type=education",
+          "protocol": "https",
+          "host": [
+            "bored-api",
+            "appbrewery",
+            "com"
+          ],
+          "path": [
+            "filter"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "education"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bored - Social Activity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bored-api.appbrewery.com/filter?type=social",
+          "protocol": "https",
+          "host": [
+            "bored-api",
+            "appbrewery",
+            "com"
+          ],
+          "path": [
+            "filter"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "social"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bored - Free Activity",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bored-api.appbrewery.com/filter?price=0",
+          "protocol": "https",
+          "host": [
+            "bored-api",
+            "appbrewery",
+            "com"
+          ],
+          "path": [
+            "filter"
+          ],
+          "query": [
+            {
+              "key": "price",
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Joke - Random",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Joke has setup\", () => pm.expect(data.setup).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/random_joke",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "random_joke"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Joke - Programming",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Returns a joke\", () => pm.expect(data).to.be.an(\"array\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/programming/random",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            "programming",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Joke - Ten Programming Jokes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Returns jokes\", () => pm.expect(data).to.be.an(\"array\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/programming/ten",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            "programming",
+            "ten"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Joke - General Random",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/general/random",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            "general",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Advice - Random",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Advice exists\", () => pm.expect(data.slip.advice).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.adviceslip.com/advice",
+          "protocol": "https",
+          "host": [
+            "api",
+            "adviceslip",
+            "com"
+          ],
+          "path": [
+            "advice"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Advice - ID 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Slip has ID\", () => pm.expect(data.slip.id).to.eql(1));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.adviceslip.com/advice/1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "adviceslip",
+            "com"
+          ],
+          "path": [
+            "advice",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Advice - ID 42",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.adviceslip.com/advice/42",
+          "protocol": "https",
+          "host": [
+            "api",
+            "adviceslip",
+            "com"
+          ],
+          "path": [
+            "advice",
+            "42"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Advice - Search Life",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.adviceslip.com/advice/search/life",
+          "protocol": "https",
+          "host": [
+            "api",
+            "adviceslip",
+            "com"
+          ],
+          "path": [
+            "advice",
+            "search",
+            "life"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - Replacement GET",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+              "var data = pm.response.json();",
+              "pm.test(\"Source parameter is echoed\", function () { pm.expect(data.args.source).to.eql(\"replacement\"); });"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://postman-echo.com/get?source=replacement",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "source",
+              "value": "replacement"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get dog image",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "let jsonData = pm.response.json();",
+              "",
+              "pm.test(\"Contains image URL\", function () {",
+              "    pm.expect(jsonData.message[0]).to.include(\"jpg\");",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/image/random/3",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "image",
+            "random",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ZenQuotes - Random",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Quote exists\", () => pm.expect(data[0].q).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://zenquotes.io/api/random",
+          "protocol": "https",
+          "host": [
+            "zenquotes",
+            "io"
+          ],
+          "path": [
+            "api",
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ZenQuotes - Today",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Author exists\", () => pm.expect(data[0].a).to.be.a(\"string\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://zenquotes.io/api/today",
+          "protocol": "https",
+          "host": [
+            "zenquotes",
+            "io"
+          ],
+          "path": [
+            "api",
+            "today"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - GET Params",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"Param name is echoed\", () => pm.expect(data.args.name).to.eql(\"student\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?name=student&course=postman",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "student"
+            },
+            {
+              "key": "course",
+              "value": "postman"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "patch",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+              "var data = pm.response.json();",
+              "pm.test(\"Title is present\", function () { pm.expect(data.title).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\":\"maybe_new\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - POST JSON",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => ",
+              "pm.response.to.have.status(200));",
+              "var data =pm.response.json(); ",
+              "pm.test(\"Posted name is echoed\", function(){",
+              "pm.expect(data.json.name).to.eql(\"student\")});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"student\",\n  \"tool\": \"Postman\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/post",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "activeslip",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Advice exists\", () => {\r",
+              "    pm.expect(jsonData.slip.advice).to.be.a(\"string\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.adviceslip.com/advice",
+          "protocol": "https",
+          "host": [
+            "api",
+            "adviceslip",
+            "com"
+          ],
+          "path": [
+            "advice"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - PUT JSON",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"PUT body is echoed\", () => pm.expect(data.json.status).to.eql(\"updated\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"updated\",\n  \"id\": 50\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/put",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "put"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "random cat facts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+              "var data = pm.response.json();",
+              "pm.test(\"First fact exists\", function () {",
+              "    pm.expect(data.data[0].fact).to.be.a(\"string\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/facts",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "facts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "joke api",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Setup exists\", () => {\r",
+              "    pm.expect(jsonData.setup).to.be.a(\"string\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/random_joke",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "random_joke"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bored",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Activity exists\", () => {\r",
+              "    pm.expect(jsonData.activity).to.be.a(\"string\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bored-api.appbrewery.com/random",
+          "protocol": "https",
+          "host": [
+            "bored-api",
+            "appbrewery",
+            "com"
+          ],
+          "path": [
+            "random"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - PATCH JSON",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "var data =pm.response.json(); pm.test(\"PATCH body is echoed\", () => pm.expect(data.json.status).to.eql(\"patched\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"patched\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/patch",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "patch"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response contains title\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.title).to.eql(\"lineya\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response contains ID\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.have.property(\"id\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"lineya\",\r\n    \"body\": \"Learning Postman\",\r\n    \"id\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - DELETE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/delete",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "api 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\npm.test(\"Response time is less than 500ms\", function () {\r\n    pm.expect(pm.response.responseTime).to.be.below(500);\r\n});\r\npm.test(\"Content-Type is present\", function () {\r\n    pm.response.to.have.header(\"Content-Type\");\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pokeapi.co/api/v2/pokemon/ditto",
+          "protocol": "https",
+          "host": [
+            "pokeapi",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v2",
+            "pokemon",
+            "ditto"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pokemon",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pokeapi.co/api/v2/pokemon/ditto?limit=10",
+          "protocol": "https",
+          "host": [
+            "pokeapi",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v2",
+            "pokemon",
+            "ditto"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - HEAD",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Content-Type header exists\", () => pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "HEAD",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "programming joke",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Returns array\", () => {\r",
+              "    pm.expect(jsonData.length).to.be.above(0);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/programming/ten",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            "programming",
+            "ten"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "put",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Title updated\",function(){\r",
+              "  var jsondata= pm.response.json();\r",
+              "  pm.expect(jsondata.title).to.equal(\"new_lineya\");\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"new_lineya\",\r\n    \"body\": \"Learning Postman\",\r\n    \"id\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "list breeds",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Message object exists\", () => {\r",
+              "    pm.expect(jsonData).to.have.property(\"message\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/list/all",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "list",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3 facts",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "let jsonData = pm.response.json();\r",
+              "pm.test(\"Returns 3 facts\", () => {\r",
+              "    pm.expect(jsonData.data.length).to.eql(3);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://catfact.ninja/facts?limit=3",
+          "protocol": "https",
+          "host": [
+            "catfact",
+            "ninja"
+          ],
+          "path": [
+            "facts"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is an empty object\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.eql({});\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Echo - OPTIONS",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is successful\", () => pm.expect(pm.response.code).to.be.oneOf([200,204]));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "OPTIONS",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/options",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "options"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

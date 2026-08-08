@@ -1,0 +1,2027 @@
+{
+	"info": {
+		"_postman_id": "fbcbd6a4-bb7d-46ef-8ed9-e840ce1d5883",
+		"name": "LAB TASK 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "57125771",
+		"_collection_link": "https://rohan70302-8402619.postman.co/workspace/Rohan-Murad's-Workspace~363d39e0-f760-4cef-87e4-5216c0c3610d/collection/57125771-fbcbd6a4-bb7d-46ef-8ed9-e840ce1d5883?action=share&source=collection_link&creator=57125771"
+	},
+	"item": [
+		{
+			"name": "1-dog-ceo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Status is success\", function() {",
+							"    pm.expect(data.status).to.eql(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Image URL exists\", function() {",
+							"    pm.expect(data.message).to.include(\"https://\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/image/random",
+					"protocol": "https",
+					"host": ["dog", "ceo"],
+					"path": ["api", "breeds", "image", "random"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-catfact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Fact exists\", function() {",
+							"    pm.expect(data.fact).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Length is positive\", function() {",
+							"    pm.expect(data.length).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://catfact.ninja/fact",
+					"protocol": "https",
+					"host": ["catfact", "ninja"],
+					"path": ["fact"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-randomuser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"One user returned\", function() {",
+							"    pm.expect(data.results.length).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Email exists\", function() {",
+							"    pm.expect(data.results[0].email).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randomuser.me/api/",
+					"protocol": "https",
+					"host": ["randomuser", "me"],
+					"path": ["api", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Product ID is 1\", function() {",
+							"    pm.expect(product.id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Title exists\", function() {",
+							"    pm.expect(product.title).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Price is greater than 0\", function() {",
+							"    pm.expect(product.price).to.be.above(0);",
+							"});",
+							"",
+							"pm.test(\"Category exists\", function() {",
+							"    pm.expect(product.category).to.exist;",
+							"});",
+							"",
+							"pm.test(\"Stock field exists\", function() {",
+							"    pm.expect(product.stock).to.not.be.undefined;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Product ID is 1\", function() {",
+							"    pm.expect(product.id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Title exists\", function() {",
+							"    pm.expect(product.title).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Price is numeric\", function() {",
+							"    pm.expect(product.price).to.be.a(\"number\");",
+							"});",
+							"",
+							"pm.test(\"Category exists\", function() {",
+							"    pm.expect(product.category).to.exist;",
+							"});",
+							"",
+							"pm.test(\"Image URL exists\", function() {",
+							"    pm.expect(product.image).to.include(\"http\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fakestoreapi.com/products/1",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6-agify",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Name is rohan\", function() {",
+							"    pm.expect(data.name.toLowerCase()).to.eql(\"rohan\");",
+							"});",
+							"",
+							"pm.test(\"Age is a number\", function() {",
+							"    pm.expect(data.age).to.be.a(\"number\");",
+							"});",
+							"",
+							"pm.test(\"Count is greater than 0\", function() {",
+							"    pm.expect(data.count).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.agify.io/?name=rohan",
+					"protocol": "https",
+					"host": ["api", "agify", "io"],
+					"path": [""],
+					"query": [
+						{
+							"key": "name",
+							"value": "rohan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7-genderize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Name is rohan\", function() {",
+							"    pm.expect(data.name.toLowerCase()).to.eql(\"rohan\");",
+							"});",
+							"",
+							"pm.test(\"Gender is valid\", function() {",
+							"    pm.expect([\"male\", \"female\"]).to.include(data.gender);",
+							"});",
+							"",
+							"pm.test(\"Probability is between 0 and 1\", function() {",
+							"    pm.expect(data.probability).to.be.within(0, 1);",
+							"});",
+							"",
+							"pm.test(\"Count is positive\", function() {",
+							"    pm.expect(data.count).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.genderize.io/?name=rohan",
+					"protocol": "https",
+					"host": ["api", "genderize", "io"],
+					"path": [""],
+					"query": [
+						{
+							"key": "name",
+							"value": "rohan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-nationalize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Name is rohan\", function() {",
+							"    pm.expect(data.name.toLowerCase()).to.eql(\"rohan\");",
+							"});",
+							"",
+							"pm.test(\"Country array exists\", function() {",
+							"    pm.expect(data.country).to.be.an(\"array\");",
+							"});",
+							"",
+							"pm.test(\"At least one prediction returned\", function() {",
+							"    pm.expect(data.country.length).to.be.greaterThan(0);",
+							"});",
+							"",
+							"pm.test(\"Country ID exists\", function() {",
+							"    pm.expect(data.country[0].country_id).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nationalize.io/?name=rohan",
+					"protocol": "https",
+					"host": ["api", "nationalize", "io"],
+					"path": [""],
+					"query": [
+						{
+							"key": "name",
+							"value": "rohan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9-coin-gecko",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Gecko says hello\", function() {",
+							"    pm.expect(data.gecko_says).to.include(\"To the Moon\");",
+							"});",
+							"",
+							"pm.test(\"Response contains gecko_says\", function() {",
+							"    pm.expect(data.gecko_says).to.exist;",
+							"});",
+							"",
+							"pm.test(\"Content-Type is JSON\", function() {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.coingecko.com/api/v3/ping",
+					"protocol": "https",
+					"host": ["api", "coingecko", "com"],
+					"path": ["api", "v3", "ping"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10-bored-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Activity exists\", function() {",
+							"    pm.expect(data.activity).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Type exists\", function() {",
+							"    pm.expect(data.type).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Participants is at least 1\", function() {",
+							"    pm.expect(data.participants).to.be.at.least(1);",
+							"});",
+							"",
+							"pm.test(\"Price is a number\", function() {",
+							"    pm.expect(data.price).to.be.a(\"number\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bored-api.appbrewery.com/random",
+					"protocol": "https",
+					"host": ["bored-api", "appbrewery", "com"],
+					"path": ["random"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11-uni-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Response is not empty\", function() {",
+							"    pm.expect(data.length).to.be.greaterThan(0);",
+							"});",
+							"",
+							"pm.test(\"Country is Bangladesh\", function() {",
+							"    pm.expect(data[0].country).to.eql(\"Bangladesh\");",
+							"});",
+							"",
+							"pm.test(\"University name exists\", function() {",
+							"    pm.expect(data[0].name).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"Web pages array exists\", function() {",
+							"    pm.expect(data[0].web_pages).to.be.an(\"array\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://universities.hipolabs.com/search?country=Bangladesh",
+					"protocol": "http",
+					"host": ["universities", "hipolabs", "com"],
+					"path": ["search"],
+					"query": [
+						{
+							"key": "country",
+							"value": "Bangladesh"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12-ipify",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"IP exists\", function() {",
+							"    pm.expect(data.ip).to.exist;",
+							"});",
+							"",
+							"pm.test(\"IP is a string\", function() {",
+							"    pm.expect(data.ip).to.be.a(\"string\");",
+							"});",
+							"",
+							"pm.test(\"IP format is valid\", function() {",
+							"    pm.expect(data.ip).to.match(/^(\\d{1,3}\\.){3}\\d{1,3}$|^[A-Fa-f0-9:]+$/);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ipify.org?format=json",
+					"protocol": "https",
+					"host": ["api", "ipify", "org"],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"JWT token exists\", function() {",
+							"    pm.expect(data.token).to.exist;",
+							"});",
+							"",
+							"pm.test(\"Token is a string\", function() {",
+							"    pm.expect(data.token).to.be.a(\"string\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\":\"mor_2314\",\n  \"password\":\"83r5^_\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fakestoreapi.com/auth/login",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["auth", "login"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status OK\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Products exist\", function() {",
+							"    pm.expect(data.products.length).to.be.above(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"products\": [\n        {\n            \"id\": 1,\n            \"quantity\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/carts/add",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["carts", "add"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 200 or 201\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Title correct\", function() {",
+							"    pm.expect(data.title).to.eql(\"API Testing Product\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\":\"API Testing Product\",\n\"price\":100,\n\"description\":\"Postman Lab\",\n\"image\":\"https://i.pravatar.cc\",\n\"category\":\"electronics\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fakestoreapi.com/products",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "16-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status success\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"First name correct\", function() {",
+							"    pm.expect(data.firstName).to.eql(\"Rohan\");",
+							"});",
+							"",
+							"pm.test(\"ID exists\", function() {",
+							"    pm.expect(data.id).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Rohan\",\n    \"lastName\": \"Murad\",\n    \"age\": 23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/users/add",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users", "add"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "17-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 201 or 200\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Product title matches\", function() {",
+							"    pm.expect(data.title).to.eql(\"Gaming Laptop\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Gaming Laptop\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/add",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "add"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "18-express-mock",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is success\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
+							"});",
+							"",
+							"pm.test(\"Response is JSON\", function() {",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"shipper\": \"Rohan\",\n  \"receiver\": \"John\",\n  \"weight\": 2.5,\n  \"destination\": \"Germany\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dhl-express.mock.beeceptor.com/shipments",
+					"protocol": "https",
+					"host": ["dhl-express", "mock", "beeceptor", "com"],
+					"path": ["shipments"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "19-crypto-wallet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is success\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
+							"});",
+							"",
+							"pm.test(\"Response is JSON\", function() {",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"rohan@test.com\",\n  \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crypto-wallet-server.mock.beeceptor.com/api/v1/login",
+					"protocol": "https",
+					"host": ["crypto-wallet-server", "mock", "beeceptor", "com"],
+					"path": ["api", "v1", "login"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "20-crypto-reg",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is success\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
+							"});",
+							"",
+							"pm.test(\"Response is JSON\", function() {",
+							"    pm.response.to.be.json;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\":\"rohan\",\n  \"email\":\"rohan@test.com\",\n  \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crypto-wallet-server.mock.beeceptor.com/api/v1/register",
+					"protocol": "https",
+					"host": ["crypto-wallet-server", "mock", "beeceptor", "com"],
+					"path": ["api", "v1", "register"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21-dhl-express",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is success\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 404]);",
+							"});",
+							"",
+							"pm.test(\"Response is JSON\", function() {",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Response time below 5 seconds\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pickupDate\": \"2026-08-10\",\n    \"pickupTime\": \"14:30\",\n    \"location\": \"Dhaka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dhl-express.mock.beeceptor.com/pickups/123456",
+					"protocol": "https",
+					"host": ["dhl-express", "mock", "beeceptor", "com"],
+					"path": ["pickups", "123456"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "22-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Title updated\", function() {",
+							"    pm.expect(data.title).to.eql(\"Updated Post\");",
+							"});",
+							"",
+							"pm.test(\"Body updated\", function() {",
+							"    pm.expect(data.body).to.eql(\"Updated using Postman\");",
+							"});",
+							"",
+							"pm.test(\"User ID is 1\", function() {",
+							"    pm.expect(data.userId).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"Updated Post\",\n    \"body\": \"Updated using Postman\",\n    \"userId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "23-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Product title updated\", function() {",
+							"    pm.expect(product.title).to.eql(\"iPhone 15 Pro\");",
+							"});",
+							"",
+							"pm.test(\"Price updated\", function() {",
+							"    pm.expect(product.price).to.eql(999);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"iPhone 15 Pro\",\n    \"price\": 999\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "24-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var user = pm.response.json();",
+							"",
+							"pm.test(\"First name updated\", function() {",
+							"    pm.expect(user.firstName).to.eql(\"Rohan\");",
+							"});",
+							"",
+							"pm.test(\"Age updated\", function() {",
+							"    pm.expect(user.age).to.eql(24);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Rohan\",\n    \"age\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/users/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "25-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Title updated\", function() {",
+							"    pm.expect(product.title).to.eql(\"Gaming Mouse\");",
+							"});",
+							"",
+							"pm.test(\"Price exists\", function() {",
+							"    pm.expect(product.price).to.be.a(\"number\");",
+							"});",
+							"",
+							"pm.test(\"Category exists\", function() {",
+							"    pm.expect(product.category).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Gaming Mouse\",\n    \"price\": 55,\n    \"description\": \"RGB Gaming Mouse\",\n    \"image\": \"https://i.pravatar.cc\",\n    \"category\": \"electronics\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fakestoreapi.com/products/7",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products", "7"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "26-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Title updated\", function() {",
+							"    pm.expect(data.title).to.eql(\"Updated Title\");",
+							"});",
+							"",
+							"pm.test(\"ID is 1\", function() {",
+							"    pm.expect(data.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Title\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "27-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Body updated\", function() {",
+							"    pm.expect(data.body).to.eql(\"This body has been updated.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"body\": \"This body has been updated.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/2",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts", "2"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "28-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OPTIONS handled\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
+							"});",
+							"",
+							"pm.test(\"Response time below 5000ms\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/users",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "29-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Price updated\", function() {",
+							"    pm.expect(product.price).to.eql(999);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 999\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "30-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Stock updated\", function() {",
+							"    pm.expect(product.stock).to.eql(250);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stock\": 250\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/2",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "2"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "31-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var user = pm.response.json();",
+							"",
+							"pm.test(\"First name updated\", function() {",
+							"    pm.expect(user.firstName).to.eql(\"Rohan\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Rohan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/users/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "32-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Price exists\", function() {",
+							"    pm.expect(product.price).to.be.a(\"number\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 150\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fakestoreapi.com/products/1",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "33-dummyjson-todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var todo = pm.response.json();",
+							"",
+							"pm.test(\"Todo completed\", function() {",
+							"    pm.expect(todo.completed).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Todo ID is 1\", function() {",
+							"    pm.expect(todo.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"completed\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/todos/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["todos", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "34-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 5 seconds\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "35-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Album deleted successfully\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+							"});",
+							"",
+							"pm.test(\"Response time under 5000 ms\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/albums/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["albums", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "36-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is successful\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+							"});",
+							"",
+							"pm.test(\"No server error\", function() {",
+							"    pm.expect(pm.response.code).to.not.be.oneOf([500, 503]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/photos/1",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["photos", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "37-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Deleted flag exists\", function() {",
+							"    pm.expect(data.isDeleted).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Product ID is correct\", function() {",
+							"    pm.expect(data.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "38-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"User deleted\", function() {",
+							"    pm.expect(data.isDeleted).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Deleted user ID is 1\", function() {",
+							"    pm.expect(data.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/users/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "39-dummyjson-todo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var data = pm.response.json();",
+							"",
+							"pm.test(\"Todo deleted\", function() {",
+							"    pm.expect(data.isDeleted).to.eql(true);",
+							"});",
+							"",
+							"pm.test(\"Todo ID is correct\", function() {",
+							"    pm.expect(data.id).to.eql(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/todos/1",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["todos", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "40-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var product = pm.response.json();",
+							"",
+							"pm.test(\"Deleted product ID\", function() {",
+							"    pm.expect(product.id).to.eql(1);",
+							"});",
+							"",
+							"pm.test(\"Title exists\", function() {",
+							"    pm.expect(product.title).to.exist;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://fakestoreapi.com/products/1",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products", "1"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "41-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header exists\", function() {",
+							"    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;",
+							"});",
+							"",
+							"pm.test(\"Response body is empty\", function() {",
+							"    pm.expect(pm.response.text()).to.eql(\"\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["posts"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "42-typicode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is valid\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,204]);",
+							"});",
+							"",
+							"pm.test(\"Server header exists\", function() {",
+							"    pm.expect(pm.response.headers.has(\"Server\")).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": ["jsonplaceholder", "typicode", "com"],
+					"path": ["users"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "43-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type exists\", function() {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["products"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "44-dummyjson",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is successful\", function() {",
+							"    pm.expect(pm.response.code).to.eql(200);",
+							"});",
+							"",
+							"pm.test(\"Date header exists\", function() {",
+							"    pm.expect(pm.response.headers.has(\"Date\")).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/users",
+					"protocol": "https",
+					"host": ["dummyjson", "com"],
+					"path": ["users"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "45-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Connection header exists\", function() {",
+							"    pm.expect(pm.response.headers.has(\"Connection\")).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://fakestoreapi.com/products",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "46-official-jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,204]);",
+							"});",
+							"",
+							"pm.test(\"Content-Type header exists\", function() {",
+							"    pm.expect(pm.response.headers.has(\"Content-Type\")).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/random_joke",
+					"protocol": "https",
+					"host": ["official-joke-api", "appspot", "com"],
+					"path": ["random_joke"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "47-catfact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OPTIONS handled\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
+							"});",
+							"",
+							"pm.test(\"Content-Length header exists if available\", function() {",
+							"    if (pm.response.headers.has(\"Content-Length\")) {",
+							"        pm.expect(pm.response.headers.get(\"Content-Length\")).to.exist;",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://catfact.ninja/fact",
+					"protocol": "https",
+					"host": ["catfact", "ninja"],
+					"path": ["fact"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "48-random-user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OPTIONS handled\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
+							"});",
+							"",
+							"pm.test(\"Response time is acceptable\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://randomuser.me/api/",
+					"protocol": "https",
+					"host": ["randomuser", "me"],
+					"path": ["api", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "49-official-jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OPTIONS supported or rejected correctly\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
+							"});",
+							"",
+							"pm.test(\"Response received\", function() {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/random_joke",
+					"protocol": "https",
+					"host": ["official-joke-api", "appspot", "com"],
+					"path": ["random_joke"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "50-fake-store-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"OPTIONS handled\", function() {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
+							"});",
+							"",
+							"pm.test(\"Server header exists if available\", function() {",
+							"    if (pm.response.headers.has(\"Server\")) {",
+							"        pm.expect(pm.response.headers.get(\"Server\")).to.be.a(\"string\");",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://fakestoreapi.com/products",
+					"protocol": "https",
+					"host": ["fakestoreapi", "com"],
+					"path": ["products"]
+				}
+			},
+			"response": []
+		}
+	]
+}

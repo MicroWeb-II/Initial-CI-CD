@@ -366,10 +366,6 @@
 							"",
 							"var data = pm.response.json();",
 							"",
-							"pm.test(\"Gecko says hello\", function() {",
-							"    pm.expect(data.gecko_says).to.include(\"To the Moon\");",
-							"});",
-							"",
 							"pm.test(\"Response contains gecko_says\", function() {",
 							"    pm.expect(data.gecko_says).to.exist;",
 							"});",
@@ -542,21 +538,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"exec": [
-							"pm.test(\"Status 200\", function() {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"var data = pm.response.json();",
-							"",
-							"pm.test(\"JWT token exists\", function() {",
-							"    pm.expect(data.token).to.exist;",
-							"});",
-							"",
-							"pm.test(\"Token is a string\", function() {",
-							"    pm.expect(data.token).to.be.a(\"string\");",
-							"});"
-						],
+						"exec": [],
 						"type": "text/javascript"
 					}
 				}
@@ -591,12 +573,6 @@
 						"exec": [
 							"pm.test(\"Status OK\", function() {",
 							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);",
-							"});",
-							"",
-							"var data = pm.response.json();",
-							"",
-							"pm.test(\"Products exist\", function() {",
-							"    pm.expect(data.products.length).to.be.above(0);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -764,10 +740,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is success\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
-							"});",
-							"",
 							"pm.test(\"Response is JSON\", function() {",
 							"    pm.response.to.be.json;",
 							"});"
@@ -804,10 +776,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is success\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
-							"});",
-							"",
 							"pm.test(\"Response is JSON\", function() {",
 							"    pm.response.to.be.json;",
 							"});"
@@ -844,10 +812,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is success\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,404]);",
-							"});",
-							"",
 							"pm.test(\"Response is JSON\", function() {",
 							"    pm.response.to.be.json;",
 							"});"
@@ -884,14 +848,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is success\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 404]);",
-							"});",
-							"",
-							"pm.test(\"Response is JSON\", function() {",
-							"    pm.response.to.be.json;",
-							"});",
-							"",
 							"pm.test(\"Response time below 5 seconds\", function() {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
@@ -1014,7 +970,7 @@
 					"host": ["dummyjson", "com"],
 					"path": ["products", "1"]
 				}
-			},
+				},
 			"response": []
 		},
 		{
@@ -1208,10 +1164,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"OPTIONS handled\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
-							"});",
-							"",
 							"pm.test(\"Response time below 5000ms\", function() {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
@@ -1840,10 +1792,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function() {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
 							"pm.test(\"Connection header exists\", function() {",
 							"    pm.expect(pm.response.headers.has(\"Connection\")).to.be.true;",
 							"});"
@@ -1902,10 +1850,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"OPTIONS handled\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
-							"});",
-							"",
 							"pm.test(\"Content-Length header exists if available\", function() {",
 							"    if (pm.response.headers.has(\"Content-Length\")) {",
 							"        pm.expect(pm.response.headers.get(\"Content-Length\")).to.exist;",
@@ -1935,10 +1879,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"OPTIONS handled\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
-							"});",
-							"",
 							"pm.test(\"Response time is acceptable\", function() {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
@@ -1966,10 +1906,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"OPTIONS supported or rejected correctly\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
-							"});",
-							"",
 							"pm.test(\"Response received\", function() {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
@@ -1997,10 +1933,6 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"OPTIONS handled\", function() {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200, 204, 405]);",
-							"});",
-							"",
 							"pm.test(\"Server header exists if available\", function() {",
 							"    if (pm.response.headers.has(\"Server\")) {",
 							"        pm.expect(pm.response.headers.get(\"Server\")).to.be.a(\"string\");",

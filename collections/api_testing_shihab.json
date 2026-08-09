@@ -1,0 +1,2035 @@
+{
+    "info": {
+        "_postman_id": "b23df5e4-7b6e-48f7-b401-3c49d74ec758",
+        "name": "Shihab's 50 API Tests (JSONPlaceholder)",
+        "description": "50 API tests for Lab 02 CI/CD Assignment",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Posts",
+            "item": [
+                {
+                    "name": "Get Posts 1",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/1",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 2",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/2",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 3",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/3",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "3"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/4",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "4"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 5",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/5",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 6",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/6",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 7",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/7",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "7"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/8",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "8"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/9",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "9"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Posts 10",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/posts/10",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "posts",
+                                "10"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Comments",
+            "item": [
+                {
+                    "name": "Get Comments 1",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/1",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 2",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/2",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 3",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/3",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "3"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/4",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "4"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 5",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/5",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 6",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/6",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 7",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/7",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "7"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/8",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "8"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/9",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "9"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Comments 10",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/comments/10",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "comments",
+                                "10"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Albums",
+            "item": [
+                {
+                    "name": "Get Albums 1",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/1",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 2",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/2",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 3",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/3",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "3"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/4",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "4"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 5",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/5",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 6",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/6",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 7",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/7",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "7"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/8",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "8"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/9",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "9"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Albums 10",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/albums/10",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "albums",
+                                "10"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Photos",
+            "item": [
+                {
+                    "name": "Get Photos 1",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/1",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 2",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/2",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 3",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/3",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "3"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/4",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "4"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 5",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/5",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 6",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/6",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 7",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/7",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "7"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/8",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "8"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/9",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "9"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Photos 10",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/photos/10",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "photos",
+                                "10"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "item": [
+                {
+                    "name": "Get Users 1",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/1",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 2",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/2",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 3",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/3",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "3"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 4",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/4",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "4"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 5",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/5",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 6",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/6",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 7",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/7",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "7"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 8",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/8",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "8"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 9",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/9",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "9"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Get Users 10",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "https://jsonplaceholder.typicode.com/users/10",
+                            "protocol": "https",
+                            "host": [
+                                "jsonplaceholder",
+                                "typicode",
+                                "com"
+                            ],
+                            "path": [
+                                "users",
+                                "10"
+                            ]
+                        }
+                    },
+                    "response": [],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Status code is 200\", function () {",
+                                    "    pm.response.to.have.status(200);",
+                                    "});",
+                                    "pm.test(\"Response time is less than 1000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                                    "});",
+                                    "pm.test(\"Response is valid JSON\", function () {",
+                                    "    pm.response.to.be.json;",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -3,9 +3,20 @@
     "_postman_id": "dfc71368-e8ac-40b5-a127-fee6d908b74f",
     "name": "FakeStore_Requests",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "57084251",
-    "_collection_link": "https://go.postman.co/collection/57084251-dfc71368-e8ac-40b5-a127-fee6d908b74f?source=collection_link"
+    "_exporter_id": "57084251"
   },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://fakestoreapi.com",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
   "item": [
     {
       "name": "Authentication",
@@ -19,7 +30,7 @@
                 "exec": [
                   "pm.test(\"Login successful\", function () {",
                   "    pm.response.to.have.status(200);",
-                  "    pm.environment.set(\"token\", pm.response.json().token);",
+                  "    pm.collectionVariables.set(\"token\", pm.response.json().token);",
                   "});"
                 ],
                 "type": "text/javascript",
@@ -102,7 +113,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"username\": \"mor_2314\",\n    \"password\": \"wrong\"\n}",
+              "raw": "{\n    \"password\": \"83r5^_\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -124,22 +135,6 @@
         },
         {
           "name": "Auth_User_With_Token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript",
-                "packages": {},
-                "requests": {}
-              }
-            }
-          ],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -153,15 +148,6 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
             "url": {
               "raw": "{{baseUrl}}/auth/user",
               "host": [
@@ -192,30 +178,6 @@
             }
           },
           "response": []
-        }
-      ],
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {},
-            "exec": [
-              ""
-            ]
-          }
-        },
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {},
-            "exec": [
-              "pm.environment.set(\"token\", pm.response.json().token);"
-            ]
-          }
         }
       ]
     },
@@ -309,13 +271,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/products/categories",
+              "raw": "{{baseUrl}}/products/category/electronics",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "products",
-                "categories"
+                "category",
+                "electronics"
               ]
             }
           },
@@ -346,14 +309,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/products/category/men's clothing",
+              "raw": "{{baseUrl}}/products/category/men's%20clothing",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "products",
                 "category",
-                "men's clothing"
+                "men's%20clothing"
               ]
             }
           },
@@ -365,14 +328,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/products/category/women's clothing",
+              "raw": "{{baseUrl}}/products/category/women's%20clothing",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "products",
                 "category",
-                "women's clothing"
+                "women's%20clothing"
               ]
             }
           },
@@ -454,7 +417,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"title\": \"Test\",\n    \"price\": 10,\n    \"description\": \"desc\",\n    \"image\": \"url\",\n    \"category\": \"electronic\"\n}",
+              "raw": "{\n    \"title\": \"Test\",\n    \"price\": 10,\n    \"description\": \"desc\",\n    \"image\": \"url\",\n    \"category\": \"electronics\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -506,7 +469,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"title\": \"Test\",\n    \"price\": 10,\n    \"description\": \"desc\",\n    \"image\": \"url\",\n    \"category\": \"electronic\"\n}",
+              "raw": "{\n    \"title\": \"Test\",\n    \"price\": 10,\n    \"description\": \"desc\",\n    \"image\": \"url\",\n    \"category\": \"electronics\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -527,7 +490,7 @@
           "response": []
         },
         {
-          "name": "Update_Product_1",
+          "name": "Patch_Product_1",
           "request": {
             "method": "PATCH",
             "header": [],
@@ -554,7 +517,7 @@
           "response": []
         },
         {
-          "name": "Product_1",
+          "name": "Delete_Product_1",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -915,7 +878,7 @@
           "response": []
         },
         {
-          "name": "Cart_1",
+          "name": "Delete_Cart_1",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -1024,13 +987,13 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/users/999",
+              "raw": "{{baseUrl}}/users/5",
               "host": [
                 "{{baseUrl}}"
               ],
               "path": [
                 "users",
-                "999"
+                "5"
               ]
             }
           },
@@ -1149,7 +1112,7 @@
           "response": []
         },
         {
-          "name": "Update_User_1",
+          "name": "Patch_User_1",
           "request": {
             "method": "PATCH",
             "header": [],
@@ -1176,7 +1139,7 @@
           "response": []
         },
         {
-          "name": "User_1",
+          "name": "Delete_User_1",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -1255,34 +1218,10 @@
       ]
     }
   ],
-  "auth": {
-    "type": "bearer",
-    "bearer": [
-      {
-        "key": "token",
-        "value": "token",
-        "type": "string"
-      }
-    ]
-  },
   "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
-    },
     {
       "listen": "test",
       "script": {
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
         "exec": [
           "pm.test(\"Response time is less than 3000ms\", function () {",
           "    pm.expect(pm.response.responseTime).to.be.below(3000);",
@@ -1291,7 +1230,10 @@
           "pm.test(\"Response is JSON\", function () {",
           "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
           "});"
-        ]
+        ],
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {}
       }
     }
   ]
